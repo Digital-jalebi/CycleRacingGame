@@ -26,7 +26,7 @@ public class BodyDampingProperties
 
 public class ProceduralIKHandler : MonoBehaviour
 {
-    BicycleController bicycleController;
+    public BicycleController bicycleController;
     CyclistAnimController cyclistAnimController;
     GameObject hipIKTarget, chestIKTarget, headIKTarget;
     public Vector2 chestIKRange,hipIKRange,headIKRange;
@@ -64,7 +64,7 @@ public class ProceduralIKHandler : MonoBehaviour
 
     void Start()
     {
-        bicycleController = transform.root.GetComponent<BicycleController>();
+        // bicycleController = transform.root.GetComponent<BicycleController>();
         cyclistAnimController = transform.GetComponent<CyclistAnimController>();
         hipIKTarget = cyclistAnimController.hipIK.GetComponent<MultiParentConstraint>().data.sourceObjects[0].transform.gameObject;
         chestIKTarget = cyclistAnimController.chestIK.GetComponent<TwoBoneIKConstraint>().data.target.gameObject;
